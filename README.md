@@ -12,3 +12,12 @@ docker run -it -v $PWD:/data jpfeil/strander:0.1.0 -1 sample-R1.fastq -2 sample-
 ```
 docker run -it -v $PWD:/data jpfeil/strander:0.1.0 -1 sample-R1.fastq
 ```
+
+### Output
+The output contains an ASCII figure and the Salmon libtype code (described here https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype).
+
+```
+Library Type: ISF
+5'--====1====>-----------------3',
+3'-----------------<====2====--5
+```
