@@ -6,8 +6,14 @@ import re
 import sys
 import textwrap
 
-art = {"ISF": """
-5'--====1====>-----------------3',
+art = {"SF": """
+5'--====1====>-----------------3'
+3'-----------------------------5'""",
+       "SR": """
+5'-----------------------------3'
+3'-----------------<====2====--5'""",
+       "ISF": """
+5'--====1====>-----------------3'
 3'-----------------<====2====--5'""",
        "ISR": """
 5'--====2====>-----------------3'
@@ -45,7 +51,8 @@ def salmon(r1, r2=None):
         if m:
             libtype = m.groupdict()["libtype"]
             print("Library Type: %s" % libtype)
-            print(textwrap.dedent(art[libtype]))
+            if libtype in art:
+                print(textwrap.dedent(art[libtype]))
             sys.exit()
 
 def main():
